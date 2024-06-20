@@ -67,7 +67,7 @@ public:
 
     void ispisi() const
     {
-        cout << ime << "#" << vrednost;
+        cout << ime  << vrednost;
     }
 };
 
@@ -148,13 +148,15 @@ public:
             cout << "Odbojkas nema dovoljnu vrednost za prikljucenje timu." << endl;
             return;
         }
-        Tim::dodajOdbojkasa(odbojkas);
+        Tim tim;
+        tim.dodajOdbojkasa(odbojkas);
     }
 
     void ispisi() const
     {
-        Tim::ispisi();
-        cout << " (Minimalna vrednost: " << minimalnaVrednost << ")";
+        Tim tim;
+        tim.ispisi();
+        cout << minimalnaVrednost << ")";
     }
 };
 
