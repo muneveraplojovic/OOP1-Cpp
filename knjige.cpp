@@ -1,16 +1,16 @@
 /*
 
 
-Napisite sistem klasa u jeziku c++ koji modelira interakciju izmedju knjiga, 
+Napisite sistem klasa u jeziku c++ koji modelira interakciju izmedju knjiga,
 Clanova biblioteke i samog bibliotekara. Klase treba opremiti
 odgovarajučim konstruktorima, destruktorima i operatorima dodele radi sigurne i efikasne upotrebe.
 
-Klasa Knjiga: Ova klasa predstavlia knigu i sadrži informacije o naslova, 
+Klasa Knjiga: Ova klasa predstavlia knigu i sadrži informacije o naslova,
 autoru i godini izdanja. Prilikom kreiranja knjige, postavljaju se naslov, autor i godina izdanja
 Informacije o knjizi mogu se dohvatiti.
-Klasa Clan: Ova klasa predstavija člana biblioteke i sadrži informacije 
+Klasa Clan: Ova klasa predstavija člana biblioteke i sadrži informacije
 o imenu prezimenu, adresi i listi iznajmljenih knjiga. Prilikom kreiranja člana,
- postavljaju se ime. prezime i adresa. Knjige se dodaju ili uklanjaju iz liste iznajmljenih. 
+ postavljaju se ime. prezime i adresa. Knjige se dodaju ili uklanjaju iz liste iznajmljenih.
  Informacije o članu i njegovim iznajmljenim knjigama mogu se ispisati.
 Klasa Bibliotekar: Ova klasa predstavlja bibliotekara i sadrži informacije
 o imenu i prezimenu. Bibliotekar može iznajmljivati i vraćati knjige članovima biblioteke.
@@ -70,8 +70,7 @@ public:
         cout << "Iznajmljene knjige:" << endl;
         for (const auto &knjiga : iznajmljeneKnjige)
         {
-            cout << "- " << knjiga.naslov << " (" << knjiga.autor << ", "
-                 << knjiga.godinaIzdanja << ")" << endl;
+            cout << knjiga.naslov << knjiga.autor << knjiga.godinaIzdanja << endl;
         }
     }
 };
@@ -85,7 +84,7 @@ public:
     Bibliotekar(const string &ime, const string &prezime)
         : ime(ime), prezime(prezime) {}
 
-    void iznajmiKnjigu(Clan &clan, const Knjiga &knjiga)
+    void iznajmiKnjigu(Clan &clan,  Knjiga &knjiga)
     {
         clan.iznajmiKnjigu(knjiga);
     }
@@ -95,7 +94,7 @@ public:
     //     clan.vratiKnjigu(knjiga);
     // }
 
-    void ispisiInformacije() const
+    void ispisiInformacije() 
     {
         cout << "Ime: " << ime << endl;
         cout << "Prezime: " << prezime << endl;
